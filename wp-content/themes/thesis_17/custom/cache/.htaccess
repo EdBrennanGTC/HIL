@@ -1,0 +1,8 @@
+#Rules added by SiteGround due to vulnerability in TimThumb script
+
+<Files ~ "\.(jpeg|jpg|png|gif|css)$" >
+        order deny,allow
+        allow from all
+</Files>
+        deny from all
+

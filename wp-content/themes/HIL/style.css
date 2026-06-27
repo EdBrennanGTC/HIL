@@ -1,0 +1,63 @@
+/*
+Theme Name: BuddyPress HIL
+Theme URI: http://hopeinloss.org/themes/hil/
+Description: Hopeinloss theme for BuddyPress.
+Version: 1.0
+Author: Dangerous Danger
+Author URI: http://hopeinloss.org/
+Template: bp-default
+Tags: buddypress, two-column, grey, dark
+/* > Global Elements
+-------------------------------------------------------------- */
+
+ 
+/* Inherit the default theme adminbar styles */
+@import url( ../../plugins/buddypress/bp-themes/bp-default/_inc/css/adminbar.css );
+@import url( ../../plugins/buddypress/bp-themes/bp-default/_inc/css/default.css );
+
+body {
+	background: #f5f2e9 url( ../images/background.gif ) top left repeat-x;
+
+}
+
+/* thick line between header and activity stream content */
+div.item-list-tabs {
+background:none repeat scroll 0 0 #f5f2e9;
+clear:left;
+margin:25px -20px 20px;
+overflow:hidden;
+}
+
+/* Move home page blog posts margin droped to the left */
+div.post div.post-content, div.comment-content {
+margin-left:2px;
+}
+
+
+
+/* Hide "No Comments" by turning them to white */
+div.comment-meta, div.comment-options {
+color:#FFFFFF;
+font-family:Georgia,times,serif;
+font-size:12px;
+}
+
+/* Navigation in header - copied from default.css ul*nav*/
+
+			ul#nav li.selected a, ul#nav li.current_page_item a {
+				background: #f5f2e9;
+				color: #555;
+			}		
+			ul#nav a:focus { outline: none; } 
+
+			
+/* Hide one of the border lines by turning it to white */
+	div.post p.date, div.post p.postmetadata, div.comment-meta, div.comment-options {
+		color: #888;
+		font-size: 12px;
+		font-family: Georgia, times, serif;
+		padding: 3px 0;
+		margin: 10px 0;
+		border-bottom: 1px solid #ffffff;
+		border-top: 1px solid #ffffff;
+	}

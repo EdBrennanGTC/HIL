@@ -1,0 +1,118 @@
+<?php
+/** 
+ * The base configurations of the WordPress.
+ *
+ **************************************************************************
+ * Do not try to create this file manually. Read the README.txt and run the 
+ * web installer.
+ **************************************************************************
+ *
+ * This file has the following configurations: MySQL settings, Table Prefix,
+ * Secret Keys, WordPress Language, and ABSPATH. You can find more information by
+ * visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
+ * wp-config.php} Codex page. You can get the MySQL settings from your web host.
+ *
+ * This file is used by the wp-config.php creation script during the
+ * installation.
+ *
+ * @package WordPress
+ */
+
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'hopeinlo_HIL01');
+
+/** MySQL database username */
+define('DB_USER', 'hopeinlo_dangero');
+
+/** MySQL database password */
+define('DB_PASSWORD', 'people123!@#');
+
+/** MySQL hostname */
+define('DB_HOST', 'localhost');
+
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
+
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
+define('VHOST', 'yes'); 
+$base = '/';
+define('DOMAIN_CURRENT_SITE', 'hopeinloss.org' );
+define('PATH_CURRENT_SITE', '/' );
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOGID_CURRENT_SITE', '1' );
+
+/* Uncomment to allow blog admins to edit their users. See http://trac.mu.wordpress.org/ticket/1169 */
+//define( "EDIT_ANY_USER", true );
+/* Uncomment to enable post by email options. See http://trac.mu.wordpress.org/ticket/1084 */
+//define( "POST_BY_EMAIL", true );
+
+/**#@+
+ * Authentication Unique Keys.
+ *
+ * Change these to different unique phrases!
+ * You can generate these using the {@link http://api.wordpress.org/secret-key/1.1/wpmu/salt WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ *
+ * @since 2.6.0
+ */
+define('AUTH_KEY', '8fb376094026b73b428f84b3003a40ccf6936154d80b4e7641f1a73c2279b5e0');
+define('SECURE_AUTH_KEY', '05c266c841c51a8ad26fe348e7fc8a790906fcc29a442c98678b90ebf71c686a');
+define('LOGGED_IN_KEY', 'e1616e2493e0239ccca9284faba25c5e3b97fd6528468f06ef625ee22677d36c');
+define('NONCE_KEY', '5e823a8657780b29655f88188acffd79b069338d975a3dd97be107c0275bc454');
+define('AUTH_SALT', '5a0b3e4971ed3a0806e62139486969c4a50e301019c0172d1698b22b0511e4a5');
+define('LOGGED_IN_SALT', '5a73d357767649af0189003353bf0080d3b1fa77439a5a0a6be5021e82e36a26');
+define('SECURE_AUTH_SALT', 'cc459fdaf72fd17f57a00ae39c04affdc6990c22d7f50d0d5dac0af2304d0161');
+/**#@-*/
+
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each a unique
+ * prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix  = 'wp_';
+
+/**
+ * WordPress Localized Language, defaults to English.
+ *
+ * Change this to localize WordPress.  A corresponding MO file for the chosen
+ * language must be installed to wp-content/languages. For example, install
+ * de.mo to wp-content/languages and set WPLANG to 'de' to enable German
+ * language support.
+ */
+define ('WPLANG', '');
+
+// double check $base
+if( $base == 'BASE' )
+	die( 'Problem in wp-config.php - $base is set to BASE when it should be the path like "/" or "/blogs/"! Please fix it!' );
+
+// uncomment this to enable WP_CONTENT_DIR/sunrise.php support
+//define( 'SUNRISE', 'on' );
+
+// uncomment to move wp-content/blogs.dir to another relative path
+// remember to change WP_CONTENT too.
+// define( "UPLOADBLOGSDIR", "fileserver" );
+
+// If VHOST is 'yes' uncomment and set this to a URL to redirect if a blog does not exist or is a 404 on the main blog. (Useful if signup is disabled)
+// For example, the browser will redirect to http://examples.com/ for the following: define( 'NOBLOGREDIRECT', 'http://example.com/' );
+// Set this value to %siteurl% to redirect to the root of the site
+// define( 'NOBLOGREDIRECT', '' );
+// On a directory based install you must use the theme 404 handler.
+
+// Location of mu-plugins
+// define( 'WPMU_PLUGIN_DIR', '' );
+// define( 'WPMU_PLUGIN_URL', '' );
+// define( 'MUPLUGINDIR', 'wp-content/mu-plugins' );
+
+define( "WP_USE_MULTIPLE_DB", false );
+
+/* That's all, stop editing! Happy blogging. */
+
+/** Absolute path to the WordPress directory. */
+if ( !defined('ABSPATH') )
+	define('ABSPATH', dirname(__FILE__) . '/');
+
+/** Sets up WordPress vars and included files. */
+require_once(ABSPATH . 'wp-settings.php');
